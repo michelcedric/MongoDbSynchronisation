@@ -1,0 +1,36 @@
+{
+    "manifestVersion": 1,
+    "id": "build-release-task",
+    "name": "MongoDbSync",
+    "version": "1.0.0",
+    "publisher": "cedric-michel",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+    "description": "Synchronisation MongoDb tool",
+    "categories": [
+        "Build and release"
+    ],
+    "icons": {
+        "default": "images/extension-icon.png"        
+    },
+    "files": [
+        {
+            "path": "buildAndReleaseTask"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "custom-build-release-task",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "buildAndReleaseTask"
+            }
+        }
+    ]
+}
