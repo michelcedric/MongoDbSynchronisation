@@ -11,8 +11,10 @@ Run the tool in command line. You can use --help to see the help.
 
 ![help](https://raw.githubusercontent.com/michelcedric/MongoDbSynchronisation/master/help.PNG)
 
-## VSTS build or release task
-The tool support VSTS
+## Visual Studio Team Services build or release task
+The tool support Visual Studio Team Services
+View on the [marketplace](https://marketplace.visualstudio.com/items?itemName=Cedric-Michel.build-release-task#overview)
+
 
 ### Future
 * index synchronisation

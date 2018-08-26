@@ -89,6 +89,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Vsts-Extension\home\overview.md" />
     <None Include="Vsts-Extension\home\buildAndReleaseTask\ps_modules\VstsTaskSdk\FindFunctions.ps1" />
     <None Include="Vsts-Extension\home\buildAndReleaseTask\ps_modules\VstsTaskSdk\InputFunctions.ps1" />
     <None Include="Vsts-Extension\home\buildAndReleaseTask\ps_modules\VstsTaskSdk\LegacyFindFunctions.ps1" />
