@@ -9,7 +9,7 @@ Run the tool in command line. You can use --help to see the help.
 
     mongoSync.exe --help
 
-![help](help.png)
+![help](https://raw.githubusercontent.com/michelcedric/MongoDbSynchronisation/master/help.PNG)
 
 ## VSTS build or release task
 The tool support VSTS
