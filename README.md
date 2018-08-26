@@ -1,5 +1,5 @@
 # MongoDbSynchronisation
-MongoDbSynchronisation is a tool to synchronize document between 2 MongoDb.
+MongoDbSynchronisation is a tool to synchronize document between 2 MongoDb (support azure).
 
 ## Version 1
 The version 1.0.0 support the synchrnoisation of functions from source data base to target database.
