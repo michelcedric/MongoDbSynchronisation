@@ -89,7 +89,54 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Vsts-Extension\home\buildAndReleaseTask\ps_modules\VstsTaskSdk\FindFunctions.ps1" />
+    <None Include="Vsts-Extension\home\buildAndReleaseTask\ps_modules\VstsTaskSdk\InputFunctions.ps1" />
+    <None Include="Vsts-Extension\home\buildAndReleaseTask\ps_modules\VstsTaskSdk\LegacyFindFunctions.ps1" />
+    <None Include="Vsts-Extension\home\buildAndReleaseTask\ps_modules\VstsTaskSdk\lib.json" />
+    <None Include="Vsts-Extension\home\buildAndReleaseTask\ps_modules\VstsTaskSdk\LocalizationFunctions.ps1" />
+    <None Include="Vsts-Extension\home\buildAndReleaseTask\ps_modules\VstsTaskSdk\LoggingCommandFunctions.ps1" />
+    <None Include="Vsts-Extension\home\buildAndReleaseTask\ps_modules\VstsTaskSdk\LongPathFunctions.ps1" />
+    <None Include="Vsts-Extension\home\buildAndReleaseTask\ps_modules\VstsTaskSdk\OutFunctions.ps1" />
+    <None Include="Vsts-Extension\home\buildAndReleaseTask\ps_modules\VstsTaskSdk\ServerOMFunctions.ps1" />
+    <None Include="Vsts-Extension\home\buildAndReleaseTask\ps_modules\VstsTaskSdk\Strings\resources.resjson\de-de\resources.resjson" />
+    <None Include="Vsts-Extension\home\buildAndReleaseTask\ps_modules\VstsTaskSdk\Strings\resources.resjson\en-US\resources.resjson" />
+    <None Include="Vsts-Extension\home\buildAndReleaseTask\ps_modules\VstsTaskSdk\Strings\resources.resjson\es-es\resources.resjson" />
+    <None Include="Vsts-Extension\home\buildAndReleaseTask\ps_modules\VstsTaskSdk\Strings\resources.resjson\fr-fr\resources.resjson" />
+    <None Include="Vsts-Extension\home\buildAndReleaseTask\ps_modules\VstsTaskSdk\Strings\resources.resjson\it-IT\resources.resjson" />
+    <None Include="Vsts-Extension\home\buildAndReleaseTask\ps_modules\VstsTaskSdk\Strings\resources.resjson\ja-jp\resources.resjson" />
+    <None Include="Vsts-Extension\home\buildAndReleaseTask\ps_modules\VstsTaskSdk\Strings\resources.resjson\ko-KR\resources.resjson" />
+    <None Include="Vsts-Extension\home\buildAndReleaseTask\ps_modules\VstsTaskSdk\Strings\resources.resjson\ru-RU\resources.resjson" />
+    <None Include="Vsts-Extension\home\buildAndReleaseTask\ps_modules\VstsTaskSdk\Strings\resources.resjson\zh-CN\resources.resjson" />
+    <None Include="Vsts-Extension\home\buildAndReleaseTask\ps_modules\VstsTaskSdk\Strings\resources.resjson\zh-TW\resources.resjson" />
+    <None Include="Vsts-Extension\home\buildAndReleaseTask\ps_modules\VstsTaskSdk\ToolFunctions.ps1" />
+    <None Include="Vsts-Extension\home\buildAndReleaseTask\ps_modules\VstsTaskSdk\TraceFunctions.ps1" />
+    <None Include="Vsts-Extension\home\buildAndReleaseTask\ps_modules\VstsTaskSdk\VstsTaskSdk.psd1" />
+    <None Include="Vsts-Extension\home\buildAndReleaseTask\ps_modules\VstsTaskSdk\VstsTaskSdk.psm1" />
+    <None Include="Vsts-Extension\home\buildAndReleaseTask\task.json" />
+    <None Include="Vsts-Extension\home\buildAndReleaseTask\tool.ps1" />
+    <None Include="Vsts-Extension\home\package.bat" />
+    <None Include="Vsts-Extension\home\vss-extension.json" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Vsts-Extension\home\buildAndReleaseTask\ps_modules\VstsTaskSdk\Minimatch.dll" />
+    <Content Include="Vsts-Extension\home\buildAndReleaseTask\ps_modules\VstsTaskSdk\VstsTaskSdk.dll" />
+    <Content Include="Vsts-Extension\home\images\extension-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Vsts-Extension\home\buildAndReleaseTask\tool\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy /Y "$(TargetPath)" "$(ProjectDir)Vsts-Extension\home\buildAndReleaseTask\tool"
+copy /Y "$(TargetDir)*.dll" "$(ProjectDir)Vsts-Extension\home\buildAndReleaseTask\tool"
+
+del /q $(ProjectDir)Vsts-Extension\home\*.vsix
+cd $(ProjectDir)Vsts-Extension\home\
+call $(ProjectDir)Vsts-Extension\home\package.bat
+
+copy /Y "$(ProjectDir)Vsts-Extension\home\*.vsix" "$(TargetDir)"
+
+del /q $(ProjectDir)Vsts-Extension\home\buildAndReleaseTask\tool
+del /q $(ProjectDir)Vsts-Extension\home\*.vsix</PostBuildEvent>
+  </PropertyGroup>
 </Project>
