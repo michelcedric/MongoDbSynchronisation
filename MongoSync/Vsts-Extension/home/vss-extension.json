@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "id": "build-release-task",
   "name": "MongoDbSync",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "publisher": "cedric-michel",
   "targets": [
     {
@@ -17,7 +17,11 @@
   "links": {
     "getstarted": {
       "uri": "https://github.com/michelcedric/MongoDbSynchronisation"
-    }    
+    }
+  },
+  "repository": {
+    "type": "git",
+    "uri": "https://github.com/michelcedric/MongoDbSynchronisation"
   },
   "description": "Synchronisation MongoDb tool",
   "categories": [
