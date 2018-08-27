@@ -46,7 +46,7 @@ namespace MongoSync.CommandLine
         /// <summary>
         /// Indicate if you want to check function integrity before launc synchronisation
         /// </summary>
-        [Option('c', "check", Required = false, HelpText = "Check function integrity before launc synchronisation")]
+        [Option('c', "check", Required = false, HelpText = "Check function integrity before launch synchronisation")]
         public bool CheckFunctionIntegrity { get; set; }
     }
 }
